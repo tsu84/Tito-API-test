@@ -1,5 +1,5 @@
 import 'isomorphic-fetch'
-import { APIKEY, ENDPOINT } from './config'
+import { APIKEY, ENDPOINT } from '../config'
 
 /*
     http://teamtito.github.io/tito-api-docs/#authentication
@@ -22,7 +22,7 @@ test('authentication is working', () => {
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
-        expect(response.status).toBe(200)
+        expect(response.ok).toBeTruthy()
     })
 })
 
@@ -37,6 +37,6 @@ test('authentication without api key returns error', () => {
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
-        expect(response.status).toBe(401)
+        expect(response.ok).toBeFalsy()
     })
 })
