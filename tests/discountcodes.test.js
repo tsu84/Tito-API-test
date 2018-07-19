@@ -1,5 +1,5 @@
 import 'isomorphic-fetch'
-import { APIKEY, ENDPOINT, ACCOUNT, TESTEVENTNAME } from '../config'
+import { APIKEY, URL, ACCOUNT, TESTEVENTNAME } from '../config'
 
 /*
     http://teamtito.github.io/tito-api-docs/?shell#get-all-discount-codes
@@ -17,7 +17,7 @@ test('"Get all Discount Codes" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${ENDPOINT}/${ACCOUNT}/${TESTEVENTNAME}/discount_codes`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/discount_codes`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {

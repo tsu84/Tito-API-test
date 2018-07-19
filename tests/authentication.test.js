@@ -1,5 +1,5 @@
 import 'isomorphic-fetch'
-import { APIKEY, ENDPOINT } from '../config'
+import { APIKEY, URL } from '../config'
 
 /*
     http://teamtito.github.io/tito-api-docs/#authentication
@@ -18,7 +18,7 @@ test('authentication is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${ENDPOINT}/...`
+    const url = `${URL}/...`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -33,7 +33,7 @@ test('authentication without api key returns error', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${ENDPOINT}/...`
+    const url = `${URL}/...`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {

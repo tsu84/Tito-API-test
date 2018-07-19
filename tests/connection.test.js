@@ -1,10 +1,10 @@
 import 'isomorphic-fetch'
-import { ENDPOINT } from '../config'
+import { URL } from '../config'
 
 const init = {
     method: 'GET'
 }
-const url = `${ENDPOINT}/`
+const url = `${URL}/`
 
 test('connection is working', () => {
     expect.assertions(1)

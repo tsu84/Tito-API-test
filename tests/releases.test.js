@@ -1,5 +1,5 @@
 import 'isomorphic-fetch'
-import { APIKEY, ENDPOINT, ACCOUNT, TESTEVENTNAME } from '../config'
+import { APIKEY, URL, ACCOUNT, TESTEVENTNAME } from '../config'
 
 /*
     http://teamtito.github.io/tito-api-docs/?shell#get-all-releases
@@ -17,7 +17,7 @@ test('"Get all Releases" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${ENDPOINT}/${ACCOUNT}/${TESTEVENTNAME}/releases`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/releases`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {

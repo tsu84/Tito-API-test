@@ -1,5 +1,5 @@
 import 'isomorphic-fetch'
-import { APIKEY, ENDPOINT, ACCOUNT, TESTEVENTNAME } from '../config'
+import { APIKEY, URL, ACCOUNT, TESTEVENTNAME } from '../config'
 
 /*
     http://teamtito.github.io/tito-api-docs/?shell#get-all-questions
@@ -17,7 +17,7 @@ test('"Get all Questions" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${ENDPOINT}/${ACCOUNT}/${TESTEVENTNAME}/questions`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -45,7 +45,7 @@ test('"Creating a new Question" is working', () => {
         },
         body: JSON.stringify({"data":{"type":"questions","attributes":{"field_type":"Checkboxes","options":"Small\nMedium\nLarge\nExtra Large","title":"T-Shirt Size"}}})
     }
-    const url = `${ENDPOINT}/${ACCOUNT}/questions`
+    const url = `${URL}/${ACCOUNT}/questions`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -69,7 +69,7 @@ test('"Get a specific Question" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${ENDPOINT}/${ACCOUNT}/${TESTEVENTNAME}/questions/100001`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions/100001`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
