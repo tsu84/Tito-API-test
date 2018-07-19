@@ -28,6 +28,8 @@ test('"Get all Events" is working', () => {
 const eventName = 'awesome-conf'
 
 /*
+    http://teamtito.github.io/tito-api-docs/?shell#creating-a-new-event
+
     curl --request POST \
     --url 'https://api.tito.io/v2/an-account/events' \
         --header 'Authorization: Token token=YOUR-API-KEY' \
@@ -76,6 +78,8 @@ test('"Get a specific Event" is working', () => {
 })
 
 /*
+    http://teamtito.github.io/tito-api-docs/?shell#duplicating-an-event
+
     curl --request POST \
         --url 'https://api.tito.io/v2/an-account/awesome-conf/duplicate' \
         --header 'Authorization: Token token=YOUR-API-KEY' \
@@ -112,6 +116,8 @@ test('"Duplicating an Event" is working', () => {
 })
 
 /*
+    http://teamtito.github.io/tito-api-docs/?shell#updating-an-event
+
     curl --request PATCH \
         --url 'https://api.tito.io/v2/an-account/awesome-conf' \
         --header 'Authorization: Token token=YOUR-API-KEY' \
@@ -138,6 +144,8 @@ test('"Updating an Event" is working', () => {
 })
 
 /*
+    http://teamtito.github.io/tito-api-docs/?shell#deleting-an-event
+
     curl --request DELETE \
         --url 'https://api.tito.io/v2/an-account/awesome-conf' \
         --header 'Authorization: Token token=YOUR-API-KEY' \
