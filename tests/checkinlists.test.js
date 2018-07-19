@@ -62,34 +62,10 @@ test('"Creating a new Check-in List" is working', () => {
 })
 
 /*
-    http://teamtito.github.io/tito-api-docs/?shell#get-all-check-in-lists
+    http://teamtito.github.io/tito-api-docs/?shell#get-a-specific-check-in-list
 
     curl --request GET \
         --url 'https://api.tito.io/v2/an-account/awesome-conf/checkin_lists/awesomeconf-check-in-list' \
-        --header 'Authorization: Token token=YOUR-API-KEY' \
-        --header 'Accept: application/vnd.api+json' \
-*/
-test('"Get a specific Check-in List" is working', () => {
-    const init = {
-        method: 'GET',
-        headers: {
-            'Authorization': `Token token=${APIKEY}`,
-            'Accept': 'application/vnd.api+json'
-        }
-    }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/checkin_lists/${checkin_list_id}`
-        
-    expect.assertions(1)
-    return fetch(url, init).then(response => {
-        expect(response.ok).toBeTruthy()
-    })
-})
-
-/*
-    http://teamtito.github.io/tito-api-docs/?shell#get-a-specific-activity
-
-    curl --request GET \
-        --url 'https://api.tito.io/v2/an-account/awesome-conf/activities/1000001' \
         --header 'Authorization: Token token=YOUR-API-KEY' \
         --header 'Accept: application/vnd.api+json' \
 */
