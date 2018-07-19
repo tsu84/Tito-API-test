@@ -2,6 +2,8 @@ import 'isomorphic-fetch'
 import { APIKEY, ENDPOINT, ACCOUNT, TESTEVENTNAME } from '../config'
 
 /*
+    http://teamtito.github.io/tito-api-docs/?shell#get-all-check-in-lists
+
     curl --request GET \
         --url 'https://api.tito.io/v2/an-account/awesome-conf/checkin_lists' \
         --header 'Authorization: Token token=YOUR-API-KEY' \

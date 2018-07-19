@@ -2,6 +2,8 @@ import 'isomorphic-fetch'
 import { APIKEY, ENDPOINT, ACCOUNT, TESTEVENTNAME } from '../config'
 
 /*
+    http://teamtito.github.io/tito-api-docs/?shell#get-all-questions
+
     curl --request GET \
         --url 'https://api.tito.io/v2/an-account/awesome-conf/questions' \
         --header 'Authorization: Token token=YOUR-API-KEY' \
@@ -24,6 +26,8 @@ test('"Get all Questions" is working', () => {
 })
 
 /*
+    http://teamtito.github.io/tito-api-docs/?shell#creating-a-new-question
+
     curl --request POST \
         --url 'https://api.tito.io/v2/an-account/awesome-conf/questions' \
         --header 'Authorization: Token token=YOUR-API-KEY' \
@@ -50,6 +54,8 @@ test('"Creating a new Question" is working', () => {
 })
 
 /*
+    http://teamtito.github.io/tito-api-docs/?shell#get-a-specific-question
+
     curl --request GET \
         --url 'https://api.tito.io/v2/an-account/awesome-conf/questions/1000001' \
         --header 'Authorization: Token token=YOUR-API-KEY' \

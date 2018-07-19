@@ -2,12 +2,14 @@ import 'isomorphic-fetch'
 import { APIKEY, ENDPOINT, ACCOUNT, TESTEVENTNAME } from '../config'
 
 /*
+    http://teamtito.github.io/tito-api-docs/?shell#get-all-activities
+    
     curl --request GET \
         --url 'https://api.tito.io/v2/an-account/awesome-conf/activities' \
         --header 'Authorization: Token token=YOUR-API-KEY' \
         --header 'Accept: application/vnd.api+json' \
 */
-test('"Get all Activity" is working', () => {
+test('"Get all Activities" is working', () => {
     const init = {
         method: 'GET',
         headers: {

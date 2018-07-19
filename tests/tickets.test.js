@@ -2,6 +2,8 @@ import 'isomorphic-fetch'
 import { APIKEY, ENDPOINT, ACCOUNT, TESTEVENTNAME } from '../config'
 
 /*
+    http://teamtito.github.io/tito-api-docs/?shell#get-all-tickets
+
     curl --request GET \
         --url 'https://api.tito.io/v2/an-account/awesome-conf/tickets' \
         --header 'Authorization: Token token=YOUR-API-KEY' \
