@@ -2,5 +2,5 @@
 
 export const APIKEY = 'YOUR_API_KEY'
 export const ENDPOINT = 'https://api.tito.io'
-export const USERNAME = 'YOUR_USERNAME'
+export const ACCOUNT = 'YOUR_ACCOUNT'
 export const TESTEVENTNAME = 'TEST_EVENT_NAME'

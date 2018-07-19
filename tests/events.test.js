@@ -1,5 +1,5 @@
 import 'isomorphic-fetch'
-import { APIKEY, ENDPOINT, USERNAME, TESTEVENTNAME } from '../config'
+import { APIKEY, ENDPOINT, ACCOUNT, TESTEVENTNAME } from '../config'
 
 /*
     http://teamtito.github.io/tito-api-docs/#get-all-events
@@ -17,7 +17,7 @@ test('"Get all Events" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${ENDPOINT}/${USERNAME}/events`
+    const url = `${ENDPOINT}/${ACCOUNT}/events`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -43,7 +43,7 @@ test('"Creating a new Event" is working', () => {
         },
         body: JSON.stringify({"data":{"type":"events","attributes":{"slug":"Awesome-conf","title":"Awesome Conf"}}})
     }
-    const url = `${ENDPOINT}/${USERNAME}/events`
+    const url = `${ENDPOINT}/${ACCOUNT}/events`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -65,7 +65,7 @@ test('"Get a specific Event" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${ENDPOINT}/${USERNAME}/${TESTEVENTNAME}`
+    const url = `${ENDPOINT}/${ACCOUNT}/${TESTEVENTNAME}`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -91,7 +91,7 @@ test('"Duplicating an Event" is working', () => {
         },
         data: {}
     }
-    const url = `${ENDPOINT}/${USERNAME}/${TESTEVENTNAME}/duplicate`
+    const url = `${ENDPOINT}/${ACCOUNT}/${TESTEVENTNAME}/duplicate`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -104,7 +104,7 @@ test('"Duplicating an Event" is working', () => {
                 'Accept': 'application/vnd.api+json',
             }
         }
-        const url = `${ENDPOINT}/${USERNAME}/${TESTEVENTNAME}-copy`
+        const url = `${ENDPOINT}/${ACCOUNT}/${TESTEVENTNAME}-copy`
         fetch(url, init)   
     })
 })
@@ -127,7 +127,7 @@ test('"Updating an Event" is working', () => {
         },
         body: JSON.stringify({"data":{"type":"events","id":"awesome-conf","attributes":{"location":"Dublin, Ireland"}}})
     }
-    const url = `${ENDPOINT}/${USERNAME}/${TESTEVENTNAME}`
+    const url = `${ENDPOINT}/${ACCOUNT}/${TESTEVENTNAME}`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -149,7 +149,7 @@ test('"Deleting an Event" is working', () => {
             'Accept': 'application/vnd.api+json',
         }
     }
-    const url = `${ENDPOINT}/${USERNAME}/${TESTEVENTNAME}`
+    const url = `${ENDPOINT}/${ACCOUNT}/${TESTEVENTNAME}`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -165,7 +165,7 @@ test('Getting a deleted event returns error', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${ENDPOINT}/${USERNAME}/${TESTEVENTNAME}`
+    const url = `${ENDPOINT}/${ACCOUNT}/${TESTEVENTNAME}`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {

@@ -1,5 +1,5 @@
 import 'isomorphic-fetch'
-import { APIKEY, ENDPOINT, USERNAME, TESTEVENTNAME } from '../config'
+import { APIKEY, ENDPOINT, ACCOUNT, TESTEVENTNAME } from '../config'
 
 /*
     curl --request GET \
@@ -7,7 +7,7 @@ import { APIKEY, ENDPOINT, USERNAME, TESTEVENTNAME } from '../config'
         --header 'Authorization: Token token=YOUR-API-KEY' \
         --header 'Accept: application/vnd.api+json' \
 */
-test.only('"Get all Questions" is working', () => {
+test('"Get all Questions" is working', () => {
     const init = {
         method: 'GET',
         headers: {
@@ -15,7 +15,7 @@ test.only('"Get all Questions" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${ENDPOINT}/${USERNAME}/${TESTEVENTNAME}/questions`
+    const url = `${ENDPOINT}/${ACCOUNT}/${TESTEVENTNAME}/questions`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -41,7 +41,7 @@ test('"Creating a new Question" is working', () => {
         },
         body: JSON.stringify({"data":{"type":"questions","attributes":{"field_type":"Checkboxes","options":"Small\nMedium\nLarge\nExtra Large","title":"T-Shirt Size"}}})
     }
-    const url = `${ENDPOINT}/${USERNAME}/questions`
+    const url = `${ENDPOINT}/${ACCOUNT}/questions`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -63,7 +63,7 @@ test('"Get a specific Question" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${ENDPOINT}/${USERNAME}/${TESTEVENTNAME}/questions/100001`
+    const url = `${ENDPOINT}/${ACCOUNT}/${TESTEVENTNAME}/questions/100001`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
