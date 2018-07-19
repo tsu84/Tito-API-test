@@ -45,7 +45,7 @@ test('"Creating a new Question" is working', () => {
         },
         body: JSON.stringify({"data":{"type":"questions","attributes":{"field_type":"Checkboxes","options":"Small\nMedium\nLarge\nExtra Large","title":"T-Shirt Size"}}})
     }
-    const url = `${URL}/${ACCOUNT}/questions`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -61,19 +61,19 @@ test('"Creating a new Question" is working', () => {
         --header 'Authorization: Token token=YOUR-API-KEY' \
         --header 'Accept: application/vnd.api+json' \
 */
-test('"Get a specific Question" is working', () => {
-    const init = {
-        method: 'GET',
-        headers: {
-            'Authorization': `Token token=${APIKEY}`,
-            'Accept': 'application/vnd.api+json'
-        }
-    }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions/100001`
+// test('"Get a specific Question" is working', () => {
+//     const init = {
+//         method: 'GET',
+//         headers: {
+//             'Authorization': `Token token=${APIKEY}`,
+//             'Accept': 'application/vnd.api+json'
+//         }
+//     }
+//     const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions/100001`
         
-    expect.assertions(1)
-    return fetch(url, init).then(response => {
-        expect(response.ok).toBeTruthy()
-    })
-})
+//     expect.assertions(1)
+//     return fetch(url, init).then(response => {
+//         expect(response.ok).toBeTruthy()
+//     })
+// })
 
