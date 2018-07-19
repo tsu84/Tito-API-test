@@ -8,6 +8,14 @@
   "version": "1.0.0",
   "description": "Tito API testing with Jest",
   "main": "index.js",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Tsuneo Kurihara",
+  "license": "ISC",
   "dependencies": {
     "abab": "^1.0.4",
     "abbrev": "^1.1.1",
@@ -459,10 +467,5 @@
     "yallist": "^3.0.2",
     "yargs": "^11.1.0",
     "yargs-parser": "^9.0.2"
-  },
-  "scripts": {
-    "test": "jest"
-  },
-  "author": "Tsuneo Kurihara",
-  "license": "ISC"
+  }  
 }
