@@ -18,7 +18,7 @@ test('authentication is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${ENDPOINT}/v2/...`
+    const url = `${ENDPOINT}/...`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -33,7 +33,7 @@ test('authentication without api key returns error', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${ENDPOINT}/v2/...`
+    const url = `${ENDPOINT}/...`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {

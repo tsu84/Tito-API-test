@@ -4,7 +4,7 @@ import { ENDPOINT } from '../config'
 const init = {
     method: 'GET'
 }
-const url = `${ENDPOINT}/v2/`
+const url = `${ENDPOINT}/`
 
 test('connection is working', () => {
     expect.assertions(1)
