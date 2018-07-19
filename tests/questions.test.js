@@ -25,6 +25,8 @@ test('"Get all Questions" is working', () => {
     })
 })
 
+var questionid = 0
+
 /*
     http://teamtito.github.io/tito-api-docs/?shell#creating-a-new-question
 
@@ -48,8 +50,14 @@ test('"Creating a new Question" is working', () => {
     const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions`
         
     expect.assertions(1)
-    return fetch(url, init).then(response => {
+    return fetch(url, init)
+    .then(response => {
         expect(response.ok).toBeTruthy()
+        return response.json()
+    })
+    .then(json => {
+        const jsonData = json.data
+        questionid = jsonData.id
     })
 })
 
@@ -61,19 +69,71 @@ test('"Creating a new Question" is working', () => {
         --header 'Authorization: Token token=YOUR-API-KEY' \
         --header 'Accept: application/vnd.api+json' \
 */
-// test('"Get a specific Question" is working', () => {
-//     const init = {
-//         method: 'GET',
-//         headers: {
-//             'Authorization': `Token token=${APIKEY}`,
-//             'Accept': 'application/vnd.api+json'
-//         }
-//     }
-//     const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions/100001`
+test('"Get a specific Question" is working', () => {
+    const init = {
+        method: 'GET',
+        headers: {
+            'Authorization': `Token token=${APIKEY}`,
+            'Accept': 'application/vnd.api+json'
+        }
+    }
+    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions/${questionid}`
         
-//     expect.assertions(1)
-//     return fetch(url, init).then(response => {
-//         expect(response.ok).toBeTruthy()
-//     })
-// })
+    expect.assertions(1)
+    return fetch(url, init).then(response => {
+        expect(response.ok).toBeTruthy()
+    })
+})
 
+/*
+    http://teamtito.github.io/tito-api-docs/?shell#updating-a-question
+
+    curl --request PATCH \
+        --url 'https://api.tito.io/v2/an-account/awesome-conf/questions/1000001' \
+        --header 'Authorization: Token token=YOUR-API-KEY' \
+        --header 'Accept: application/vnd.api+json' \
+        --header 'Content-type: application/json'
+        --data '{"data":{"type":"questions","id":"1000001","attributes":{"required":true}}}'
+*/
+test('"Updating a Question" is working', () => {
+    const init = {
+        method: 'PATCH',
+        headers: {
+            'Authorization': `Token token=${APIKEY}`,
+            'Accept': 'application/vnd.api+json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({"data":{"type":"questions","id":"1000001","attributes":{"required":true}}})
+    }
+    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions/${questionid}`
+        
+    expect.assertions(1)
+    return fetch(url, init)
+    .then(response => {
+        expect(response.ok).toBeTruthy()
+    })
+})
+
+/*
+    http://teamtito.github.io/tito-api-docs/?shell#deleting-a-question
+
+    curl --request DELETE \
+        --url 'https://api.tito.io/v2/an-account/awesome-conf/questions/1000001' \
+        --header 'Authorization: Token token=YOUR-API-KEY' \
+        --header 'Accept: application/vnd.api+json' \
+*/
+test('"Get a specific Question" is working', () => {
+    const init = {
+        method: 'DELETE',
+        headers: {
+            'Authorization': `Token token=${APIKEY}`,
+            'Accept': 'application/vnd.api+json'
+        }
+    }
+    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions/${questionid}`
+        
+    expect.assertions(1)
+    return fetch(url, init).then(response => {
+        expect(response.ok).toBeTruthy()
+    })
+})
