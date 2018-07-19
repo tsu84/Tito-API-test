@@ -122,7 +122,7 @@ test('"Updating a Question" is working', () => {
         --header 'Authorization: Token token=YOUR-API-KEY' \
         --header 'Accept: application/vnd.api+json' \
 */
-test('"Get a specific Question" is working', () => {
+test('"Deleting a Question" is working', () => {
     const init = {
         method: 'DELETE',
         headers: {
