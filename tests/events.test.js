@@ -1,5 +1,5 @@
 import 'isomorphic-fetch'
-import { APIKEY, URL, ACCOUNT, TESTEVENTNAME } from '../config'
+import { APIKEY, URL, ACCOUNT } from '../config'
 
 /*
     http://teamtito.github.io/tito-api-docs/#get-all-events
@@ -24,6 +24,8 @@ test('"Get all Events" is working', () => {
         expect(response.ok).toBeTruthy()
     })
 })
+
+const eventName = awesome-conf
 
 /*
     curl --request POST \
@@ -65,7 +67,7 @@ test('"Get a specific Event" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}`
+    const url = `${URL}/${ACCOUNT}/${eventName}`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -91,7 +93,7 @@ test('"Duplicating an Event" is working', () => {
         },
         data: {}
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/duplicate`
+    const url = `${URL}/${ACCOUNT}/${eventName}/duplicate`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -104,7 +106,7 @@ test('"Duplicating an Event" is working', () => {
                 'Accept': 'application/vnd.api+json',
             }
         }
-        const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}-copy`
+        const url = `${URL}/${ACCOUNT}/${eventName}-copy`
         fetch(url, init)   
     })
 })
@@ -127,7 +129,7 @@ test('"Updating an Event" is working', () => {
         },
         body: JSON.stringify({"data":{"type":"events","id":"awesome-conf","attributes":{"location":"Dublin, Ireland"}}})
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}`
+    const url = `${URL}/${ACCOUNT}/${eventName}`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -149,7 +151,7 @@ test('"Deleting an Event" is working', () => {
             'Accept': 'application/vnd.api+json',
         }
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}`
+    const url = `${URL}/${ACCOUNT}/${eventName}`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -165,7 +167,7 @@ test('Getting a deleted event returns error', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}`
+    const url = `${URL}/${ACCOUNT}/${eventName}`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
