@@ -25,7 +25,7 @@ test('"Get all Events" is working', () => {
     })
 })
 
-const eventName = awesome-conf
+const eventName = 'awesome-conf'
 
 /*
     curl --request POST \
