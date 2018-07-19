@@ -119,7 +119,7 @@ test('"Updating a Activity" is working', () => {
     http://teamtito.github.io/tito-api-docs/?shell#deleting-a-activity
 
     curl --request DELETE \
-        --url 'https://api.tito.io/v2/an-account/awesome-conf/questions/1000001' \
+        --url 'https://api.tito.io/v2/an-account/awesome-conf/activities/1000001' \
         --header 'Authorization: Token token=YOUR-API-KEY' \
         --header 'Accept: application/vnd.api+json' \
 */
