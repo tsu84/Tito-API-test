@@ -67,12 +67,10 @@ test('"Creating a new Discount Code" is working', () => {
 /*
     http://teamtito.github.io/tito-api-docs/?shell#get-a-specific-discount-code
 
-    curl --request POST \
-        --url 'https://api.tito.io/v2/an-account/awesome-conf/discount_codes' \
+    curl --request GET \
+        --url 'https://api.tito.io/v2/an-account/awesome-conf/discount_codes/1000001' \
         --header 'Authorization: Token token=YOUR-API-KEY' \
-        --header 'Accept: application/vnd.api+json' \
-        --header 'Content-Type: application/json'
-        --data '{"data":{"type":"discount-codes","attributes":{"code":"DISCOUNTDRACULA","discount_code_type":"PercentOffDiscountCode","value":"25.00"}}}'
+        --header 'Accept: application/vnd.api+json' \    
 */
 test('"Get a specific Discount Code" is working', () => {
     const init = {
