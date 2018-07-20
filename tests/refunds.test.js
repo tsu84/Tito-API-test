@@ -24,3 +24,25 @@ test('"Get all Refunds" is working', () => {
         expect(response.ok).toBeTruthy()
     })
 })
+
+/*
+    curl --request GET \
+        --url 'https://api.tito.io/v2/an-account/awesome-conf/refunds/1001' \
+        --header 'Authorization: Token token=YOUR-API-KEY' \
+        --header 'Accept: application/vnd.api+json' \
+*/
+test('"Get a specific Refund" not found working', () => {
+    const init = {
+        method: 'GET',
+        headers: {
+            'Authorization': `Token token=${APIKEY}`,
+            'Accept': 'application/vnd.api+json'
+        }
+    }
+    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/refunds/0`
+        
+    expect.assertions(1)
+    return fetch(url, init).then(response => {
+        expect(response.status).toBe(404)
+    })
+})
