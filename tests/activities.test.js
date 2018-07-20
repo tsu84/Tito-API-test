@@ -1,5 +1,5 @@
 import 'isomorphic-fetch'
-import { APIKEY, URL, ACCOUNT, TESTEVENTNAME } from '../config'
+import { APIKEY, URL, ACCOUNT, TESTEVENT } from '../config'
 
 /*
     http://teamtito.github.io/tito-api-docs/?shell#get-all-activities
@@ -17,7 +17,7 @@ test('"Get all Activities" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/activities`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/activities`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -48,7 +48,7 @@ test('"Creating a new Activity" is working', () => {
         },
         body: JSON.stringify({"data":{"type":"activities","attributes":{"capactity":100,"name":"Day 2 Dinner","release_ids":["conf-ticket","workshop-ticket"]}}})
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/activities`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/activities`
         
     expect.assertions(1)
     return fetch(url, init)
@@ -78,7 +78,7 @@ test('"Get a specific Activity" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/activities/${activityid}`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/activities/${activityid}`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -106,7 +106,7 @@ test('"Updating a Activity" is working', () => {
         },
         body: JSON.stringify({"data":{"type":"activities","id":"1000001","attributes":{"capacity":115}}})
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/activities/${activityid}`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/activities/${activityid}`
         
     expect.assertions(1)
     return fetch(url, init)
@@ -131,7 +131,7 @@ test('"Deleting a Activity" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/activities/${activityid}`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/activities/${activityid}`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {

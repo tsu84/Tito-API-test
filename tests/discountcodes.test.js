@@ -1,8 +1,8 @@
 import 'isomorphic-fetch'
-import { APIKEY, URL, ACCOUNT, TESTEVENTNAME } from '../config'
+import { APIKEY, URL, ACCOUNT, TESTEVENT } from '../config'
 
 const endpoint = 'discount_codes'
-const endpointpath = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/${endpoint}`
+const endpointpath = `${URL}/${ACCOUNT}/${TESTEVENT}/${endpoint}`
 
 /*
     http://teamtito.github.io/tito-api-docs/?shell#get-all-discount-codes

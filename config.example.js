@@ -3,4 +3,5 @@
 export const APIKEY = 'YOUR_API_KEY'
 export const URL = 'https://api.tito.io'
 export const ACCOUNT = 'YOUR_ACCOUNT'
-export const TESTEVENTNAME = 'TEST_EVENT_NAME'
+export const TESTEVENTNAME = 'TEST_EVENT_NAME' // must be previously defined
+export const TESTRELEASE = 'TEST_RELEASE_NAME' // must be previously defined

@@ -1,5 +1,5 @@
 import 'isomorphic-fetch'
-import { APIKEY, URL, ACCOUNT, TESTEVENTNAME } from '../config'
+import { APIKEY, URL, ACCOUNT, TESTEVENT } from '../config'
 
 /*
     http://teamtito.github.io/tito-api-docs/?shell#get-all-questions
@@ -17,7 +17,7 @@ test('"Get all Questions" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/questions`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -47,7 +47,7 @@ test('"Creating a new Question" is working', () => {
         },
         body: JSON.stringify({"data":{"type":"questions","attributes":{"field_type":"Checkboxes","options":"Small\nMedium\nLarge\nExtra Large","title":"T-Shirt Size"}}})
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/questions`
         
     expect.assertions(1)
     return fetch(url, init)
@@ -77,7 +77,7 @@ test('"Get a specific Question" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions/${questionid}`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/questions/${questionid}`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -105,7 +105,7 @@ test('"Updating a Question" is working', () => {
         },
         body: JSON.stringify({"data":{"type":"questions","id":"1000001","attributes":{"required":true}}})
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions/${questionid}`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/questions/${questionid}`
         
     expect.assertions(1)
     return fetch(url, init)
@@ -130,7 +130,7 @@ test('"Deleting a Question" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/questions/${questionid}`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/questions/${questionid}`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {

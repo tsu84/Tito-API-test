@@ -1,5 +1,5 @@
 import 'isomorphic-fetch'
-import { APIKEY, URL, ACCOUNT, TESTEVENTNAME } from '../config'
+import { APIKEY, URL, ACCOUNT, TESTEVENT } from '../config'
 
 /*
     http://teamtito.github.io/tito-api-docs/?shell#get-all-refunds
@@ -17,7 +17,7 @@ test('"Get all Refunds" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/refunds`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/refunds`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -39,7 +39,7 @@ test('"Get a specific Refund" not found working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/refunds/0`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/refunds/0`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {

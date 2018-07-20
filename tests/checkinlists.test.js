@@ -1,5 +1,5 @@
 import 'isomorphic-fetch'
-import { APIKEY, URL, ACCOUNT, TESTEVENTNAME } from '../config'
+import { APIKEY, URL, ACCOUNT, TESTEVENT } from '../config'
 
 /*
     http://teamtito.github.io/tito-api-docs/?shell#get-all-check-in-lists
@@ -17,7 +17,7 @@ test('"Get all Check-in Lists" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/checkin_lists`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/checkin_lists`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -47,7 +47,7 @@ test('"Creating a new Check-in List" is working', () => {
         },
         body: JSON.stringify({"data":{"type":"checkin-lists","attributes":{"title":"Day 2 Check-in List"}}})
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/checkin_lists`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/checkin_lists`
         
     expect.assertions(1)
     return fetch(url, init)
@@ -77,7 +77,7 @@ test('"Get a specific Check-in List" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/checkin_lists/${checkin_list_id}`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/checkin_lists/${checkin_list_id}`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
@@ -105,7 +105,7 @@ test('"Updating a Check-in List" is working', () => {
         },
         body: JSON.stringify({"data":{"type":"checkin-lists","id":"awesomeconf-check-in-list","attributes":{"release_ids":["day-2-workshop-ticket","day-2-after-party-ticket"]}}})
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/checkin_lists/${checkin_list_id}`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/checkin_lists/${checkin_list_id}`
         
     expect.assertions(1)
     return fetch(url, init)
@@ -130,7 +130,7 @@ test('"Deleting a Check-in List" is working', () => {
             'Accept': 'application/vnd.api+json'
         }
     }
-    const url = `${URL}/${ACCOUNT}/${TESTEVENTNAME}/checkin_lists/${checkin_list_id}`
+    const url = `${URL}/${ACCOUNT}/${TESTEVENT}/checkin_lists/${checkin_list_id}`
         
     expect.assertions(1)
     return fetch(url, init).then(response => {
